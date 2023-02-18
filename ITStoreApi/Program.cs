@@ -1,11 +1,14 @@
+
+
 namespace ITStoreApi
 {
     public class Program
     {
         public static void Main(string[] args)
         {
+            //the WebApplication.CreateBuilder method calls UseKestrel internally. See appsettings.json for configurations.
             var builder = WebApplication.CreateBuilder(args);
-
+            
             // Add services to the container.
 
             builder.Services.AddControllers();
@@ -25,11 +28,14 @@ namespace ITStoreApi
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
+            app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyMethod().AllowAnyOrigin());
 
             app.MapControllers();
 
+            //CreateHostBuilder(args).Build().Run();
             app.Run();
         }
     }
