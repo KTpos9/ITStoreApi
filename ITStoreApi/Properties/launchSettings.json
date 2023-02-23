@@ -15,6 +15,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
+      "externalUrlConfiguration": true, //add this line
       //"applicationUrl": "https://localhost:5953;http://localhost:5046",
       "applicationUrl": "https://ktpos09.thddns.net:5953",
       "environmentVariables": {
