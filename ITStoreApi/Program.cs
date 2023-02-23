@@ -1,5 +1,7 @@
 
 
+using Microsoft.AspNetCore.Authentication.Certificate;
+
 namespace ITStoreApi
 {
     public class Program
@@ -16,6 +18,12 @@ namespace ITStoreApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddTransient<SqlDataAccess>();
+            //builder.Services
+            //    .AddAuthentication(CertificateAuthenticationDefaults.AuthenticationScheme)
+            //    .AddCertificate(options =>
+            //    {
+            //        options.AllowedCertificateTypes = CertificateTypes.All;
+            //    });
 
             var app = builder.Build();
 
