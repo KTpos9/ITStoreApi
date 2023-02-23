@@ -23,7 +23,7 @@ namespace ITStoreApi.Controllers
         }
 
         // GET api/<ProductController>/5
-        [HttpGet("{id}")]
+        [HttpGet("getByID/{Id}")]
         public Task<Product> GetProductById(int Id)
         {
             string sql = @"select * from dbo.Product2 where ProductId=@Id";
@@ -41,7 +41,7 @@ namespace ITStoreApi.Controllers
 
         // PUT api/<ProductController>/5
         //TODO: implement update order by id 
-        [HttpPut("{id}")]
+        [HttpPut("{Id}")]
         public Task UpdateProduct(Product product)
         {
             string sql = @"update dbo.Product2 set ProductImg=@ProductImg, ProductName=@ProductName, ProductDesc=@ProductDesc, ProductPrice=@ProductPrice where ProductId=@ProductId";
@@ -50,11 +50,11 @@ namespace ITStoreApi.Controllers
 
         // DELETE api/<ProductController>/5
         [HttpDelete("{id}")]
-        public Task DeleteProduct(int Id)
+        public Task DeleteProduct(int id)
         {
             string sql = @"delete from dbo.Product2 
                           where ProductId = @Id";
-            return _db.SaveData(sql, new { Id = Id });
+            return _db.SaveData(sql, new { Id = id });
         }
     }
 }

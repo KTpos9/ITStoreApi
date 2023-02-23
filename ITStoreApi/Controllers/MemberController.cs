@@ -23,14 +23,14 @@ namespace ITStoreApi.Controllers
         }
 
         // GET api/<MemberController>/5
-        [HttpGet("{id}")]
+        [HttpGet("getByID/{id}")]
         public Task<Member> GetMemberById(int Id)
         {
             string sql = @"select * from dbo.Member2 where MemberId=@Id";
             return _db.LoadSingleData<Member, dynamic>(sql, new { Id = Id });
         }
 
-        [HttpGet("{email}")]
+        [HttpGet("getByEmail/{email}")]
         public Task<Member> GetMemberByEmail(string email)
         {
             string sql = "select * from dbo.Member2 where Email=@Email";
@@ -56,11 +56,11 @@ namespace ITStoreApi.Controllers
 
         // DELETE api/<MemberController>/5
         [HttpDelete("{id}")]
-        public Task DeleteMember(int Id)
+        public Task DeleteMember(int id)
         {
             string sql = @"delete from dbo.Member2 
                           where MemberId = @Id";
-            return _db.SaveData(sql, new { Id = Id });
+            return _db.SaveData(sql, new { Id = id });
         }
     }
 }
