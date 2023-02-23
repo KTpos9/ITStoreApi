@@ -1,5 +1,3 @@
-
-
 using Microsoft.AspNetCore.Authentication.Certificate;
 
 namespace ITStoreApi
