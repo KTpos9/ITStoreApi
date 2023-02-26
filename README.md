@@ -1,5 +1,5 @@
 # ITStoreApi
-web api for *[ITStore_Angular](https://github.com/KTpos9/ITStore_Angular)*
+web api for [ITStore_Angular](https://github.com/KTpos9/ITStore_Angular)
 ## API
 
 ### Auth
