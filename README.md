@@ -1,6 +1,6 @@
 # ITStoreApi
-Web API for [ITStore_Angular](https://github.com/KTpos9/ITStore_Angular). Build with ASP.NET Core
-## API
+Web API for [ITStore_Angular](https://github.com/KTpos9/ITStore_Angular). Build with ASP.NET Core.
+## APIs
 
 ### Auth
 
