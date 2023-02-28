@@ -39,10 +39,10 @@ Web API for [ITStore_Angular](https://github.com/KTpos9/ITStore_Angular). Build 
 
 ### Product
 
-| Name         | Request Url            | Method | Parameter | Respond Body                             |
-| ------------ | ---------------------- | ------ | --------- | ---------------------------------------- |
-| GetOrder     | /api/Product/get       | GET    | -         | [int,string,string,string,string,string] |
-| GetOrderById | /api/Order/getById/:id | GET    | -         | [int,string,string,string,string,string] |
-| InsertOrder  | /api/Product/post      | POST   | -         | -                                        |
-| UpdateOrder  | /api/Product/put       | PUT    | -         | -                                        |
-| DeleteOrder  | /api/Product/delete    | DELETE | -         | -                                        |
+| Name           | Request Url            | Method | Parameter | Respond Body                             |
+| -------------- | ---------------------- | ------ | --------- | ---------------------------------------- |
+| GetProduct     | /api/Product/get       | GET    | -         | [int,string,string,string,string,string] |
+| GetProductById | /api/Order/getById/:id | GET    | -         | [int,string,string,string,string,string] |
+| InsertProduct  | /api/Product/post      | POST   | -         | -                                        |
+| UpdateProduct  | /api/Product/put       | PUT    | -         | -                                        |
+| DeleteProduct  | /api/Product/delete    | DELETE | -         | -                                        |
