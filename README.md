@@ -11,21 +11,21 @@ Web API for [ITStore_Angular](https://github.com/KTpos9/ITStore_Angular). Build 
 
 ### Cart
 
-| Name        | Request Url          | Method | Parameter | Respond Body               |
-| ----------- | -------------------- | ------ | --------- | -------------------------- |
-| GetCart     | /api/Cart/get        | GET    | -         | [int,string,string,string] |
-| InsertCarrt | /api/Cart/post       | POST   | -         | -                          |
-| DeleteCart  | /api/Cart/delete/:id | DELETE | -         | -                          |
+| Name        | Request Url   | Method | Parameter | Respond Body               |
+| ----------- | ------------- | ------ | --------- | -------------------------- |
+| GetCart     | /api/Cart/    | GET    | -         | [int,string,string,string] |
+| InsertCarrt | /api/Cart/    | POST   | -         | -                          |
+| DeleteCart  | /api/Cart/:id | DELETE | -         | -                          |
 
 ### Member
 
 | Name             | Request Url                   | Method | Parameter | Respond Body                             |
 | ---------------- | ----------------------------- | ------ | --------- | ---------------------------------------- |
-| GetMember        | /api/Member/get               | GET    | -         | [int,string,string,string,string,string] |
+| GetMember        | /api/Member/               | GET    | -         | [int,string,string,string,string,string] |
 | GetMemberById    | /api/Member/GetById/:id       | GET    | :id       | [int,string,string,string,string,string] |
 | GetMemberByEmail | /api/Member/GetByEmail/:email | GET    | :email    | [int,string,string,string,string,string] |
-| UpdateMember     | /api/Member/put               | PUT    | -         | -                                        |
-| DeleteMember     | /api/Member/Delete            | DELETE | -         | -                                        |
+| UpdateMember     | /api/Member/:id           | PUT    | -         | -                                        |
+| DeleteMember     | /api/Member/:id         | DELETE | -         | -                                        |
 
 ### Order
 
@@ -33,16 +33,16 @@ Web API for [ITStore_Angular](https://github.com/KTpos9/ITStore_Angular). Build 
 | ------------ | ---------------------- | ------ | --------- | ---------------------------------------- |
 | GetOrder     | /api/Order/get         | GET    | -         | [int,string,string,string,string,string] |
 | GetOrderById | /api/Order/getById/:id | GET    | -         | [int,string,string,string,string,string] |
-| InsertOrder  | /api/Order/post        | POST   | -         | -                                        |
-| UpdateOrder  | /api/Order/put         | PUT    | -         | -                                        |
-| DeleteOrder  | /api/Order/delete      | DELETE | -         | -                                        |
+| InsertOrder  | /api/Order/        | POST   | -         | -                                        |
+| UpdateOrder  | /api/Order/:id         | PUT    | -         | -                                        |
+| DeleteOrder  | /api/Order/:id      | DELETE | -         | -                                        |
 
 ### Product
 
 | Name           | Request Url              | Method | Parameter | Respond Body                             |
 | -------------- | ------------------------ | ------ | --------- | ---------------------------------------- |
-| GetProduct     | /api/Product/get         | GET    | -         | [int,string,string,string,string,string] |
+| GetProduct     | /api/Product/         | GET    | -         | [int,string,string,string,string,string] |
 | GetProductById | /api/Product/getById/:id | GET    | -         | [int,string,string,string,string,string] |
-| InsertProduct  | /api/Product/post        | POST   | -         | -                                        |
-| UpdateProduct  | /api/Product/put         | PUT    | -         | -                                        |
-| DeleteProduct  | /api/Product/delete      | DELETE | -         | -                                        |
+| InsertProduct  | /api/Product/        | POST   | -         | -                                        |
+| UpdateProduct  | /api/Product/:id         | PUT    | -         | -                                        |
+| DeleteProduct  | /api/Product/:id      | DELETE | -         | -                                        |
