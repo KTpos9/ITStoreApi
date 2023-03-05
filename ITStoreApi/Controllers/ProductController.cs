@@ -23,11 +23,11 @@ namespace ITStoreApi.Controllers
         }
 
         // GET api/<ProductController>/5
-        [HttpGet("getByID/{Id}")]
-        public Task<Product> GetProductById(int Id)
+        [HttpGet("getByID/{id}")]
+        public Task<Product> GetProductById(int id)
         {
             string sql = @"select * from dbo.Product2 where ProductId=@Id";
-            return _db.LoadSingleData<Product, dynamic>(sql, new { Id = Id });
+            return _db.LoadSingleData<Product, dynamic>(sql, new { Id = id });
         }
 
         // POST api/<ProductController>
@@ -41,7 +41,7 @@ namespace ITStoreApi.Controllers
 
         // PUT api/<ProductController>/5
         //TODO: implement update order by id 
-        [HttpPut("{Id}")]
+        [HttpPut]
         public Task UpdateProduct(Product product)
         {
             string sql = @"update dbo.Product2 set ProductImg=@ProductImg, ProductName=@ProductName, ProductDesc=@ProductDesc, ProductPrice=@ProductPrice where ProductId=@ProductId";

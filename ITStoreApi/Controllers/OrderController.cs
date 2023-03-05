@@ -24,10 +24,10 @@ namespace ITStoreApi.Controllers
 
         // GET api/<OrderController>/5
         [HttpGet("{id}")]
-        public Task<Order> GetOrderById(int Id)
+        public Task<Order> GetOrderById(int id)
         {
             string sql = @"select * from dbo.Order2 where ProductId=@Id";
-            return _db.LoadSingleData<Order, dynamic>(sql, new { Id = Id });
+            return _db.LoadSingleData<Order, dynamic>(sql, new { Id = id });
         }
 
         // POST api/<OrderController>
@@ -50,11 +50,11 @@ namespace ITStoreApi.Controllers
 
         // DELETE api/<OrderController>/5
         [HttpDelete("{id}")]
-        public Task DeleteProduct(int Id)
+        public Task DeleteProduct(int id)
         {
             string sql = @"delete from dbo.Order2 
                           where OrderID = @Id";
-            return _db.SaveData(sql, new { Id = Id });
+            return _db.SaveData(sql, new { Id = id });
         }
     }
 }

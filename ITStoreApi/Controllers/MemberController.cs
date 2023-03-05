@@ -24,10 +24,10 @@ namespace ITStoreApi.Controllers
 
         // GET api/<MemberController>/5
         [HttpGet("getByID/{id}")]
-        public Task<Member> GetMemberById(int Id)
+        public Task<Member> GetMemberById(int id)
         {
             string sql = @"select * from dbo.Member2 where MemberId=@Id";
-            return _db.LoadSingleData<Member, dynamic>(sql, new { Id = Id });
+            return _db.LoadSingleData<Member, dynamic>(sql, new { Id = id });
         }
 
         [HttpGet("getByEmail/{email}")]
