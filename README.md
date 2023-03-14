@@ -15,7 +15,7 @@ Web API for [ITStore_Angular](https://github.com/KTpos9/ITStore_Angular). Build 
 | ----------- | ------------- | ------ | --------- | -------------------------- |
 | GetCart     | /api/Cart/    | GET    | -         | [int,string,string,string] |
 | InsertCarrt | /api/Cart/    | POST   | -         | -                          |
-| DeleteCart  | /api/Cart/:id | DELETE | -         | -                          |
+| DeleteCart  | /api/Cart/:id | DELETE | :id       | -                          |
 
 ### Member
 
@@ -34,8 +34,8 @@ Web API for [ITStore_Angular](https://github.com/KTpos9/ITStore_Angular). Build 
 | GetOrder     | /api/Order/get         | GET    | -         | [int,string,string,string,string,string] |
 | GetOrderById | /api/Order/getById/:id | GET    | -         | [int,string,string,string,string,string] |
 | InsertOrder  | /api/Order/        | POST   | -         | -                                        |
-| UpdateOrder  | /api/Order/:id         | PUT    | -         | -                                        |
-| DeleteOrder  | /api/Order/:id      | DELETE | -         | -                                        |
+| UpdateOrder  | /api/Order/:id         | PUT    | :id         | -                                        |
+| DeleteOrder  | /api/Order/:id      | DELETE | :id         | -                                        |
 
 ### Product
 
@@ -44,5 +44,5 @@ Web API for [ITStore_Angular](https://github.com/KTpos9/ITStore_Angular). Build 
 | GetProduct     | /api/Product/         | GET    | -         | [int,string,string,string,string,string] |
 | GetProductById | /api/Product/getById/:id | GET    | -         | [int,string,string,string,string,string] |
 | InsertProduct  | /api/Product/        | POST   | -         | -                                        |
-| UpdateProduct  | /api/Product/:id         | PUT    | -         | -                                        |
-| DeleteProduct  | /api/Product/:id      | DELETE | -         | -                                        |
+| UpdateProduct  | /api/Product/:id         | PUT    | :id         | -                                        |
+| DeleteProduct  | /api/Product/:id      | DELETE | :id         | -                                        |
