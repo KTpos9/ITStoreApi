@@ -41,7 +41,6 @@ namespace ITStoreApi
 
             app.MapControllers();
 
-            //CreateHostBuilder(args).Build().Run();
             app.Run();
         }
     }
