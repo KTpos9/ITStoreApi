@@ -23,7 +23,7 @@ namespace ITStoreApi.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<Member>> RegisterAsync(MemberDto request)
+        public async Task<ActionResult<Member>> RegisterAsync(Member request)
         {
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
             
@@ -50,7 +50,7 @@ namespace ITStoreApi.Controllers
             Member memberAccount = _db.LoadSingleData<Member, dynamic>(sql, new { Email = request.Email }).Result;
             if (memberAccount.Email == null || !BCrypt.Net.BCrypt.Verify(request.Password, memberAccount.Password))
             {
-                return BadRequest("Invalid Email or Password");
+                return BadRequest(new { message = "Invalid Email or Password", token = "" });
             }
             //if (member.Email != request.Email || !BCrypt.Net.BCrypt.Verify(request.Password, member.Password))
             //{
@@ -58,7 +58,7 @@ namespace ITStoreApi.Controllers
             //}
             string token = CreateToken(memberAccount);
 
-            return Ok(token);
+            return Ok( new { message = "Login Success", token = token! });
         }
         private string CreateToken(Member member)
         {
