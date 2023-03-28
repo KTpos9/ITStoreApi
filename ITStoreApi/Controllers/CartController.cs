@@ -26,8 +26,8 @@ namespace ITStoreApi.Controllers
         [HttpPost]
         public Task InsertCart(Cart cart)
         {
-            string sql = @"insert into dbo.Cart2 (ProductImg, ProductName, ProductPrice) 
-                          values (@ProductImg, @ProductName, @ProductPrice);";
+            string sql = @"insert into dbo.Cart2 (ProductImg, ProductName, ProductPrice, ProductAmount) 
+                          values (@ProductImg, @ProductName, @ProductPrice, @ProductAmount);"; 
             return _db.SaveData(sql, cart);
         }
 
