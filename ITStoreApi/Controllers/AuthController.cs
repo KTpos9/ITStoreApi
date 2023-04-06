@@ -48,9 +48,9 @@ namespace ITStoreApi.Controllers
         {
             string sql = "select * from dbo.Member2 where Email=@Email";
             Member memberAccount = _db.LoadSingleData<Member, dynamic>(sql, new { Email = request.Email }).Result;
-            if (memberAccount.Email == null || !BCrypt.Net.BCrypt.Verify(request.Password, memberAccount.Password))
+            if (memberAccount == null || !BCrypt.Net.BCrypt.Verify(request.Password, memberAccount.Password))
             {
-                return BadRequest(new { message = "Invalid Email or Password", token = "" });
+                return BadRequest(new { message = "Invalid Email or Password" });
             }
             //if (member.Email != request.Email || !BCrypt.Net.BCrypt.Verify(request.Password, member.Password))
             //{
@@ -64,7 +64,9 @@ namespace ITStoreApi.Controllers
         {
             List<Claim> claims = new List<Claim>()
             {
-                new Claim(ClaimTypes.Email, member.Email)
+                new Claim("email", member.Email),
+                new Claim("name", $"{member.FirstName} {member.LastName}"),
+                new Claim("role", member.Role)
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value!));
