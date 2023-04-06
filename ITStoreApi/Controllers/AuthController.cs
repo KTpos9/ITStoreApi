@@ -52,10 +52,7 @@ namespace ITStoreApi.Controllers
             {
                 return BadRequest(new { message = "Invalid Email or Password" });
             }
-            //if (member.Email != request.Email || !BCrypt.Net.BCrypt.Verify(request.Password, member.Password))
-            //{
-            //    return BadRequest("Invalid Email or Password");
-            //}
+
             string token = CreateToken(memberAccount);
 
             return Ok( new { message = "Login Success", token = token! });
