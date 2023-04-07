@@ -7,5 +7,6 @@
         public string ProductName { get; set; }
         public string ProductDesc { get; set; }
         public float ProductPrice { get; set; }
+        public string ProductCategory { get; set; }
     }
 }

@@ -34,9 +34,9 @@ namespace ITStoreApi.Controllers
         [HttpPost]
         public Task InsertProduct(Product newProduct)
         {
-            string sql = @"insert into dbo.Product2 (ProductImg, ProductName, ProductDesc, ProductPrice) 
-                          values (@Img, @Name, @Desc, @Price);";
-            return _db.SaveData(sql, new { Img = newProduct.ProductImg, Name = newProduct.ProductName, Desc = newProduct.ProductDesc, Price = newProduct.ProductPrice });
+            string sql = @"insert into dbo.Product2 (ProductImg, ProductName, ProductDesc, ProductPrice, ProductCategory) 
+                          values (@Img, @Name, @Desc, @Price, @Category);";
+            return _db.SaveData(sql, new { Img = newProduct.ProductImg, Name = newProduct.ProductName, Desc = newProduct.ProductDesc, Price = newProduct.ProductPrice, Category = newProduct.ProductCategory });
         }
 
         // PUT api/<ProductController>/5
@@ -44,7 +44,7 @@ namespace ITStoreApi.Controllers
         [HttpPut]
         public Task UpdateProduct(Product product)
         {
-            string sql = @"update dbo.Product2 set ProductImg=@ProductImg, ProductName=@ProductName, ProductDesc=@ProductDesc, ProductPrice=@ProductPrice where ProductId=@ProductId";
+            string sql = @"update dbo.Product2 set ProductImg=@ProductImg, ProductName=@ProductName, ProductDesc=@ProductDesc, ProductPrice=@ProductPrice, ProductCategory=@ProductCategory where ProductId=@ProductId";
             return _db.SaveData(sql, product);
         }
 
