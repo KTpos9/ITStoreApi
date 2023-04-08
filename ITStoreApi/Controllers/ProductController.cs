@@ -30,6 +30,15 @@ namespace ITStoreApi.Controllers
             return _db.LoadSingleData<Product, dynamic>(sql, new { Id = id });
         }
 
+        [HttpGet("search")]
+        public Task<List<Product>> SearchProduct(string q)
+        {
+            string sql = @"select * 
+                           from Product2
+                            where ProductName like @q or ProductCategory = @q2";
+            return _db.LoadData<Product,dynamic>(sql, new { q = $"%{q}%", q2 = q });
+        }
+
         // POST api/<ProductController>
         [HttpPost]
         public Task InsertProduct(Product newProduct)
